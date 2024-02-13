@@ -4,28 +4,31 @@ import Tours from "./components/Tours";
 
 const App = () => {
 
-  const [tours, setTours] = useState(data);
+  const [tours, setTours] = useState(data); //tours ko ui pe reflect krwana hai, data pass kara hai
 
   function removeTour(id){
     const newTours = tours.filter(tour => tour.id !== id);
     setTours(newTours);
+    console.log(newTours);
   }
 
-  if (tours.length === 0){
-    return(
+  if(tours.length == 0){
+    return (
       <div className="refresh">
-        <h2>No tours Left</h2>
-        <button className="btn-white" onClick={() => setTours(data)}>
+        <h2>No tours left</h2>
+        <button onClick={() => setTours(data)}>
           Refresh
         </button>
 
       </div>
-    );
+    )
   }
   return(
-  <div className="App">
-    <Tours tours= {tours} removeTour= {removeTour}></Tours>
-  </div>
+    <div>
+      <Tours tours = {tours} removeTour={removeTour}>
+
+      </Tours>
+    </div>
   )
 };
 
