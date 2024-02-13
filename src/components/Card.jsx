@@ -4,10 +4,7 @@ function Card({id, name, info, image, price, removeTour}) {
     
     const [readmore, setReadmore] = useState(false);
     const description = readmore ? info: `${info.substring(0,200)}....`
-    
     function toggleHandler(){
-        console.log(readmore,"oncikckckk");
-
         setReadmore(!readmore)
         console.log(readmore);
     }

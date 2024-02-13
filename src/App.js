@@ -5,7 +5,7 @@ import Tours from "./components/Tours";
 const App = () => {
 
   const [tours, setTours] = useState(data); //tours ko ui pe reflect krwana hai, data pass kara hai
-
+  console.log(data)
   function removeTour(id){
     const newTours = tours.filter(tour => tour.id !== id);
     setTours(newTours);
@@ -25,9 +25,9 @@ const App = () => {
   }
   return(
     <div>
-      <Tours tours = {tours} removeTour={removeTour}>
+      <Tours tours = {tours} removeTour={removeTour} />
 
-      </Tours>
+      {/* </Tours> */}
     </div>
   )
 };
