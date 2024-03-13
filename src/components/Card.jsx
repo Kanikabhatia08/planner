@@ -6,12 +6,12 @@ function Card({id, name, info, image, price, removeTour}) {
     const description = readmore ? info: `${info.substring(0,200)}....`
     function toggleHandler(){
         setReadmore(!readmore)
-        console.log(readmore);
+        // console.log(readmore);
     }
 
     return(
         <div className="card">
-            <img src={image} className="image"></img>
+            <img src={image} className="image" alt={name}></img>
             <div className="tour-info">
                 <div className="tour-details">
                     <h4 className="tour-price">{price}</h4>
